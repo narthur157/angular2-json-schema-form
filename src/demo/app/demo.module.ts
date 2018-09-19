@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 import {
   JsonSchemaFormModule, NoFrameworkModule, MaterialDesignFrameworkModule,
   Bootstrap3FrameworkModule, Bootstrap4FrameworkModule
-} from '../../lib';
+} from 'angular2-json-schema-form';
 
 // To include JsonSchemaFormModule after downloading from NPM, use this instead:
 //
