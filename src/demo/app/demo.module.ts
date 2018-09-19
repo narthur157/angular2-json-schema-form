@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -31,6 +31,13 @@ import { DemoRootComponent } from './demo-root.component';
 import { routes } from './demo.routes';
 import { ActivatedRoute, Router } from '@angular/router';
 
+export const jsonSchemaFormModuleForRoot: ModuleWithProviders = JsonSchemaFormModule.forRoot(
+  MaterialDesignFrameworkModule,
+  Bootstrap3FrameworkModule,
+  Bootstrap4FrameworkModule,
+  NoFrameworkModule
+)
+
 @NgModule({
   declarations: [ AceEditorDirective, DemoComponent, DemoRootComponent ],
   imports: [
@@ -42,12 +49,7 @@ import { ActivatedRoute, Router } from '@angular/router';
     NoFrameworkModule, MaterialDesignFrameworkModule,
     Bootstrap3FrameworkModule, Bootstrap4FrameworkModule,
 
-    JsonSchemaFormModule.forRoot(
-      NoFrameworkModule,
-      MaterialDesignFrameworkModule,
-      Bootstrap3FrameworkModule,
-      Bootstrap4FrameworkModule
-    )
+    jsonSchemaFormModuleForRoot
   ],
   bootstrap: [ DemoRootComponent ]
 })
